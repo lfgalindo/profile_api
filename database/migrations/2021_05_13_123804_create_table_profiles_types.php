@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableQuestionsTypes extends Migration
+class CreateTableProfilesTypes extends Migration
 {
     public function up()
     {
-        Schema::create('questions_types', function (Blueprint $table) {
+        Schema::create('profiles_types', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('type', 255);
             $table->timestamps();
@@ -19,6 +19,6 @@ class CreateTableQuestionsTypes extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('questions_types');
+        Schema::dropIfExists('profiles_types');
     }
 }

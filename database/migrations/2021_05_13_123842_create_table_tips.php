@@ -9,21 +9,21 @@ class CreateTableTips extends Migration
     public function up()
     {
         Schema::create('tips', function (Blueprint $table) {
-            $table->uuid('question_id');
+            $table->uuid('profile_id');
             $table->integer('order');
             $table->string('tip', 255);
             $table->string('source', 255);
             $table->timestamps();
 
-            $table->primary(['question_id', 'order']);
-            $table->foreign('question_id')->references('id')->on('questions');
+            $table->primary(['profile_id', 'order']);
+            $table->foreign('profile_id')->references('id')->on('profiles');
         });
     }
 
     public function down()
     {
         Schema::table('tips', function (Blueprint $table) {
-            $table->dropForeign(['question_id']);
+            $table->dropForeign(['profile_id']);
         });
 
         Schema::dropIfExists('tips');
