@@ -9,7 +9,7 @@ class CreateTableTips extends Migration
     public function up()
     {
         Schema::create('tips', function (Blueprint $table) {
-            $table->uuid('profile_id');
+            $table->unsignedBigInteger('profile_id');
             $table->integer('order');
             $table->string('tip', 255);
             $table->string('source', 255);

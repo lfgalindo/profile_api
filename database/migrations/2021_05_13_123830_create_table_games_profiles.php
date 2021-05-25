@@ -9,11 +9,10 @@ class CreateTableGamesProfiles extends Migration
     public function up()
     {
         Schema::create('games_profiles', function (Blueprint $table) {
-            $table->uuid('game_id');
-            $table->uuid('profile_id');
+            $table->bigIncrements('game_id');
+            $table->unsignedBigInteger('profile_id');
             $table->timestamps();
 
-            $table->primary(['game_id', 'profile_id']);
             $table->foreign('game_id')->references('id')->on('games');
             $table->foreign('profile_id')->references('id')->on('profiles');
         });

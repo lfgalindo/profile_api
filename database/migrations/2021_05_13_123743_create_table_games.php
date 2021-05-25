@@ -9,10 +9,8 @@ class CreateTableGames extends Migration
     public function up()
     {
         Schema::create('games', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->bigIncrements('id');
             $table->timestamps();
-
-            $table->primary('id');
         });
     }
 
